@@ -1,0 +1,88 @@
+<div class="container">
+    <h2 class="text-center">Edit Product</h2>
+    <form (ngSubmit)="update()" action="">
+        <div class="form-row first-input d-flex">
+            <div class="form-group col-md-8 ">
+                <label for="pname">Product Name</label>
+                <input [(ngModel)]="productData.pname" type="text" class="form-control" name="pname" id="pname"
+                    placeholder="Product Name">
+            </div>
+        </div>
+        <div class="form-row d-flex">
+            <div class="form-group col-md-2">
+                <label for="category">Category</label>
+                <select id="category" [(ngModel)]="productData.category" name="category" class="form-control">
+                    <option >Gaming Pc</option>
+                    <option >Games</option>
+                    <option >Headset</option>
+                </select>
+            </div>
+            <div class="form-group col-md-8">
+                <label for="descrip">Description</label>
+                <input type="text" [(ngModel)]="productData.descrip" name="descrip" class="form-control"
+                    id="descrip" placeholder="Description">
+            </div>
+        </div>
+        <div class="form-row first-input d-flex">
+            <div class="form-group col-md-3 ">
+                <label for="price">Price</label>
+                <input type="text" [(ngModel)]="productData.price" name="price" class="form-control " id="price"
+                    placeholder="Price">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="image">Image</label>
+                <input class="form-control" [(ngModel)]="productData.image" name="image" type="text" id="image">
+            </div>
+            <div class="form-group col-md-4" *ngIf="productData.category !== 'Games'&& productData.category !== 'Headset'">
+                <label for="graphics">Graphics</label>
+                <input type="text" class="form-control" [(ngModel)]="productData.graphics" id="graphics" name="graphics"
+                    placeholder="Graphics">
+
+            </div>
+
+        </div>
+        <div class="form-row first-input d-flex">
+            <div class="form-group col-md-4"  *ngIf="productData.category !== 'Games'&& productData.category !== 'Headset'">
+                <label for="memory">Memory</label>
+                <input type="text" class="form-control " id="memory" [(ngModel)]="productData.memory" name="memory"
+                    placeholder="Memory">
+
+            </div>
+
+            <div class="form-group col-md-6"  *ngIf="productData.category !== 'Games'&& productData.category !== 'Headset'">
+                <label for="hdrive">Hard Drive</label>
+                <input type="text" class="form-control" id="hdrive" [(ngModel)]="productData.harddrive" name="hdrive"
+                    placeholder="Hard Drive">
+
+            </div>
+
+        </div>
+        <div class="form-row d-flex">
+            <div class="form-group col-md-2"  *ngIf="productData.category !== 'Games'">
+                <label for="warranty">Warranty</label>
+                <select id="warranty" [(ngModel)]="productData.warranty" name="warranty" class="form-control">
+                    <option>0</option>
+                    <option>3M</option>
+                    <option>6M</option>
+                    <option>1Y</option>
+                    <option>2Y</option>
+                    <option>3Y</option>
+                    <option>4Y</option>
+                    <option>5Y</option>
+                    <option>6Y</option>
+                    <option>7Y</option>
+                </select>
+
+            </div>
+            <div class="form-group col-md-2">
+                <label for="available">Available</label>
+                <select id="available" [(ngModel)]="productData.available" name="available" class="form-control">
+                    <option [ngValue]="true">Yes</option>
+                    <option [ngValue]="false">No</option>
+                </select>
+            </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary m-3">Update</button>
+    </form>
+</div>

@@ -1,0 +1,14 @@
+.first-input{
+    flex-wrap: wrap;
+}
+.form-group{
+    margin: 1rem;
+}
+.error{
+    color: red;
+    font-size: .8rem;
+}
+form{
+    margin-top: 2rem;
+    margin-bottom: 6.7rem;
+}

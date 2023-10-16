@@ -1,0 +1,76 @@
+<nav class="navbar navbar-1 nav-top">
+    <div class="container-fluid">
+        <a class="navbar-brand delivery">
+            <i class="fa fa-light fa-truck fa-xs">
+            </i>
+            <span class="delivery-text">Free Delivery</span>
+        </a>
+        <div class="d-flex">
+            <a class="btn btn-sm  login-btn button-1" type="submit">Login</a>
+            <a class="btn btn-sm  sign-btn button-1" type="submit">Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Navbar with off-canvas toggle button -->
+<nav class="navbar navbar-expand-lg navbar-2 sticky-top">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"
+            aria-controls="offcanvasMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand logo" href="#"><img
+                src="https://download.logo.wine/logo/GSC_Game_World/GSC_Game_World-Logo.wine.png" alt=""></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li><a class="nav-link active" aria-current="page" href="">Home</a></li>
+            <li><a class="nav-link" href="products/add">Add Product</a></li>
+                <li class="nav-item ms-2">
+                    <form class="input-group w-auto my-auto d-none d-sm-flex">
+                        <input [(ngModel)]="searchData" name="searchData" (keyup)="accessData($event)"
+                            autocomplete="off" type="search" class="form-control rounded" placeholder="Search"
+                            style="min-width: 125px;" />
+
+                        <i class="fas fa-search d-lg-flex d-none input-group-text border-0"></i>
+                    </form>
+
+                </li>
+            </ul>
+        </div>
+        <!-- Cart button always on the right -->
+        <form class="d-flex">
+            <div class="cart-container">
+                <button class="btn" type="submit">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</nav>
+<!-- Off-canvas menu structure -->
+<!-- Off-canvas menu structure -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasMenuLabel">
+            <a class="navbar-brand logo" href="#"><img src="https://download.logo.wine/logo/GSC_Game_World/GSC_Game_World-Logo.wine.png" alt=""></a>
+        </h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <!-- Add the search input within the off-canvas body -->
+        <form class="input-group my-2">
+            <input [(ngModel)]="searchData" name="searchData" (keyup)="accessData($event)"
+                autocomplete="off" type="search" class="form-control rounded" placeholder="Search" />
+
+            <i class="fas fa-search input-group-text border-0"></i>
+        </form>
+
+        <ul class="list-unstyled">
+            <li><a class="nav-link active" aria-current="page" href="">Home</a></li>
+            <li><a class="nav-link" href="products/add">Add Product</a></li>
+        </ul>
+    </div>
+</div>

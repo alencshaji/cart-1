@@ -1,0 +1,119 @@
+<div class="container">
+    <form (ngSubmit)="addNewProduct()" [formGroup]="addForm" action="">
+        <div class="form-row first-input d-flex">
+            <div class="form-group col-md-2 ">
+                <label for="id">Id</label>
+                <input type="" class="form-control" formControlName="id" id="id" placeholder="Id">
+                <div *ngIf="this.addForm.get('id')?.errors && this.addForm.get('id')?.touched">
+                    <h6 class="error">Invalid Id</h6>
+                </div>
+            </div>
+            
+            <div class="form-group col-md-8 ">
+                <label for="pname">Product Name</label>
+                <input type="text" class="form-control" formControlName="pname" id="pname" placeholder="Product Name">
+                <div *ngIf="this.addForm.get('pname')?.errors && this.addForm.get('pname')?.touched">
+                    <h6 class="error">Invalid Product Name</h6>
+                </div>
+            </div>
+        </div>
+        <div class="form-row d-flex flex-wrap">
+            <div class="form-group col-md-2">
+                <label for="category">Category</label>
+                <select id="category" formControlName="category"(change)="updateSelectedCategory()" class="form-control">
+                    <option >Gaming Pc</option>
+                    <option >Games</option>
+                    <option >Headset</option>
+                </select>
+                <div *ngIf="addForm.get('category')?.hasError('required') && addForm.get('category')?.touched">
+                    <h6 class="error">Cannot be empty</h6>
+                </div>
+            </div>
+            <div class="form-group col-md-8">
+                <label for="descrip">Description</label>
+                <input type="text" class="form-control" formControlName="descrip" id="descrip" placeholder="Description">
+                <div *ngIf="this.addForm.get('descrip')?.errors && this.addForm.get('descrip')?.touched">
+                    <h6 class="error">Invalid description</h6>
+                </div>
+            </div>
+            
+        </div>
+        <div class="form-row first-input d-flex">
+            <div class="form-group col-md-3 ">
+                <label for="price">Price</label>
+                <input type="text" class="form-control " formControlName="price" id="price" placeholder="Price">
+                <div *ngIf="this.addForm.get('price')?.errors && this.addForm.get('price')?.touched">
+                    <h6 class="error">Accept numbers only</h6>
+                </div>           
+            </div>
+            
+            <div class="form-group col-md-3">
+                <label for="image">Image</label>
+                <input class="form-control" type="text" formControlName="image" id="image">
+                <div *ngIf="this.addForm.get('image')?.errors && this.addForm.get('image')?.touched">
+                    <h6 class="error">Invalid url</h6>
+                </div>
+            </div>
+            
+            <div class="form-group col-md-4" *ngIf="selectedCategory !== CATEGORY_GAMES && selectedCategory !== CATEGORY_HEADSET">
+                <label for="graphics">Graphics</label>
+                <input type="text" class="form-control" formControlName="graphics"  id="graphics" placeholder="Graphics">
+                <div *ngIf="this.addForm.get('graphics')?.errors && this.addForm.get('graphics')?.touched">
+                    <h6 class="error">Invalid data</h6>
+                </div>
+            </div>
+            
+        </div>
+        <div class="form-row first-input d-flex">
+            <div class="form-group col-md-4" *ngIf="selectedCategory !== CATEGORY_GAMES && selectedCategory !== CATEGORY_HEADSET">
+                <label for="memory">Memory</label>
+                <input type="text" class="form-control " formControlName="memory" id="memory" placeholder="Memory">
+                <div *ngIf="this.addForm.get('memory')?.errors && this.addForm.get('memory')?.touched">
+                    <h6 class="error">Invalid data</h6>
+                </div>
+            </div>
+           
+            <div class="form-group col-md-6" *ngIf="selectedCategory !== CATEGORY_GAMES && selectedCategory !== CATEGORY_HEADSET">
+                <label for="hdrive">Hard Drive</label>
+                <input type="text" class="form-control" id="hdrive" formControlName="hdrive" placeholder="Hard Drive">
+                <div *ngIf="this.addForm.get('hdrive')?.errors && this.addForm.get('hdrive')?.touched">
+                    <h6 class="error">Invalid data</h6>
+                </div>
+            </div>
+           
+        </div>
+        <div class="form-row d-flex" >
+            <div class="form-group col-md-2" *ngIf="selectedCategory !== CATEGORY_GAMES ">
+                <label for="warranty">Warranty</label>
+                <select id="warranty" formControlName="warranty" class="form-control">
+                    <option>0</option>
+                    <option>3M</option>
+                    <option>6M</option>
+                    <option>1Y</option>
+                    <option>2Y</option>
+                    <option>3Y</option>
+                    <option>4Y</option>
+                    <option>5Y</option>
+                    <option>6Y</option>
+                    <option>7Y</option>
+                </select>
+                <div *ngIf="addForm.get('warranty')?.hasError('required') && addForm.get('warranty')?.touched">
+                    <h6 class="error">Cannot be empty</h6>
+                </div>
+            </div>
+           
+            <div class="form-group col-md-2">
+                <label for="available">Available</label>
+                <select id="available" formControlName="available" class="form-control">
+                    <option [ngValue]="true">Yes</option>
+                    <option [ngValue]="false">No</option>
+                </select>
+                <div *ngIf="addForm.get('available')?.hasError('required') && addForm.get('available')?.touched">
+                    <h6 class="error">Cannot be empty</h6>
+                </div>
+            </div>
+            
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+</div>

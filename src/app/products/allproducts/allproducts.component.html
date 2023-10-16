@@ -1,0 +1,80 @@
+<header class=" carousel-head bg-light">
+  <h6 class="product-head-text">Game World bazaar</h6>
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="https://gameloot.in/wp-content/uploads/2023/09/MK1_ON_GAMELOOT_2000x613_IND_v02.jpg"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="https://gameloot.in/wp-content/uploads/2023/06/WhatsApp-Image-2023-06-06-at-17.09.12.jpeg"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://gameloot.in/wp-content/uploads/2023/07/Website-banners-10.png" class="d-block w-100"
+          alt="...">
+      </div>
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="https://gameloot.in/wp-content/uploads/2023/08/4-1.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</header>
+<!-- Section-->
+<section>
+  
+  <div class="container px-4 px-lg-5 mt-5">
+  <!-- Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid justify-content-between">
+    <div class="d-flex">
+    
+    </div>
+    <div class="mb-3">
+      <label for="categorySelect" class="form-label">Select Category:</label>
+      <select class="form-select" id="categorySelect" (change)="categoryProduct($event)">
+        <option value="All">All</option>
+        <option value="Gaming Pc">Gaming Pc</option>
+        <option value="Games">Games</option>
+        <option value="Headset">Headset</option>
+      </select>
+      
+    </div>
+  </div>
+</nav>
+<!-- Navbar -->
+
+
+
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 mt-2 row-cols-xl-4 justify-content-center">
+      <div *ngFor="let i of filteredProducts | search: searchString : 'pname'" class="col mb-4">
+        <div class="card">
+          <!-- Product image-->
+          <img class="image-card" src={{i.image}} />
+          <!-- Product details-->
+          <div class="card-body p-4">
+            <div class="text-center">
+              <!-- Product name-->
+              <h6 class="fw-bolder">{{i.pname}}</h6>
+              <!-- Product price-->
+              <h5 class="price">₹ {{i.price}}</h5>
+            </div>
+          </div>
+          <!-- Product actions-->
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="products/view/{{i.id}}">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

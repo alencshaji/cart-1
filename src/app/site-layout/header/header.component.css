@@ -1,0 +1,77 @@
+.button-1 {
+    text-decoration: none;
+    color: rgb(228, 215, 215);
+    margin: .3rem;
+    border: none;
+}
+.bazaar {
+    font-size: 0.8rem;
+}
+
+.delivery {
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.delivery-text {
+    margin: .5rem;
+}
+
+.logo img {
+    width: 100%;
+    height: 50px;
+}
+
+.navbar.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar.navbar-expand-lg {
+    padding: 1px;
+}
+
+.navbar-toggler-icon {
+    font-size: .9rem;
+}
+
+.navbar-2 {
+    background-color: #5bc0de;
+}
+.input-group-text {
+    background: transparent !important;
+  }
+
+.navbar-1 {
+    background-color: #f05b5b;
+    top: 0; 
+    width: 100%; 
+    z-index: 1000;
+}
+
+
+.cart-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-icon {
+    font-size: 32px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 12px;
+}
+.offcanvas-body{
+background-color:transparent;
+}
+.list-unstyled li{
+    padding: 1rem;
+}

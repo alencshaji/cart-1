@@ -1,0 +1,25 @@
+.product-head-text{
+    /* color: aliceblue; */
+    text-align: center;
+    font-size: 2rem;
+}
+.carousel-head{
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+.card{
+    height: 100%;
+}
+.image-card{
+    margin:auto;
+   height:15rem;
+   width: 100%;
+}
+.price{
+    color: brown;
+}
+.input-group-text{
+    background-color: transparent;
+}
+
+
